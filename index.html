@@ -1,9 +1,588 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css" >
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    >
   </head>
-  <body></body>
+  <body>
+    <header>
+      <section class="header__logo">
+        <img src="images/logo.png" alt="Logo" >
+      </section>
+      <nav>
+        <ul>
+          <li>
+            <a href="#" class="hamburgerIcon" onclick="showMenu()">
+              <i class="fa fa-bars"></i>
+            </a>
+          </li>
+          <li><a href="#" class="nav__link">Aktiv sammen</a></li>
+          <li><a href="#" class="nav__link">Natur</a></li>
+          <li><a href="#" class="nav__link">Kultur</a></li>
+          <li><a href="#" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+      <section class="header__weather">
+        <img class="header__weatherIcon" id="weather_icon" src="icon" alt="" >
+        <section class="header__weatherDegree">15</section>
+      </section>
+    </header>
+    <section class="carousel">
+      <section class="carousel__coverImg">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/c798/5078/88c5cfef895a049cdda551ff834c257c?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=R8da9GeZUBdmFo5HvjLtZIqdpZXjrv~T-HAdMvJyXEea~vOjaodMS~qz4BZR2u7qPl~7v5NDs9xd6vQMyhN6rI2X1puiu6AfsW7OkHFVD8zYfY5~Qzx--Q2oLZHlMxDn~q~FrvuNILf2yMlokYovO6TMLaYGpy-eV8cdifnO3OQmhZZHSypBVoza1AiAeWaxyYQ9IPZa~PATnuSpSFpI3NvXC8cozrG5U0-ueADsX0AdxBoqA0usaPLs3mAvn8a0jHSuyVosPIbjF6m4CzDPYMKxmg6iAhFy8Uge50lhVvkPcp23QBQAoXJudkgNUq8cbYVv-tuurvmuPXAog8LXJA__"
+          alt=""
+        >
+      </section>
+      <section class="carousel__container">
+        <section
+          class="carousel__card active"
+          style="
+            background-image: url(https://s3-alpha-sig.figma.com/img/c798/5078/88c5cfef895a049cdda551ff834c257c?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=R8da9GeZUBdmFo5HvjLtZIqdpZXjrv~T-HAdMvJyXEea~vOjaodMS~qz4BZR2u7qPl~7v5NDs9xd6vQMyhN6rI2X1puiu6AfsW7OkHFVD8zYfY5~Qzx--Q2oLZHlMxDn~q~FrvuNILf2yMlokYovO6TMLaYGpy-eV8cdifnO3OQmhZZHSypBVoza1AiAeWaxyYQ9IPZa~PATnuSpSFpI3NvXC8cozrG5U0-ueADsX0AdxBoqA0usaPLs3mAvn8a0jHSuyVosPIbjF6m4CzDPYMKxmg6iAhFy8Uge50lhVvkPcp23QBQAoXJudkgNUq8cbYVv-tuurvmuPXAog8LXJA__);
+          "
+        >
+          <h2>Velkommen til Sønderborg</h2>
+        </section>
+        <section
+          class="carousel__card"
+          style="
+            background-image: url(https://s3-alpha-sig.figma.com/img/94be/e420/573d411c71c0379b348dea1962594755?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BpjpKCXSuZLazvfZNrvGYhdM9kA7mW1O08OqcaaaqZamcbptnB0TACz1j5EvfoBztYAolF7Bg~DddWJ3WWOTN1jgq7u7WF-6hTE9tvoOt4m8Fhd~rPMg8Ml7CEoSlmUQmWgOB1~YZyVPDbr0~JsAYGLL7NmOnD47QXeD4fDvGxjSN-cAUFTbee2J0gmMdzuR1zV8xDa1qoUwD2zpabCtA2vFmZ-ICv23WEMVT8hnZRkDzjSW-BJqlOOSIJmcWd-4tK10n71gWmvh5SAU27JqFm0VAFe7YiktiJUwh5rqJjzab34nPNrTWJCHJXcpZ56elp7HAdtAyhmu4v0S5E7-3Q__);
+          "
+        >
+          <h2>Velkommen til Sønderborg</h2>
+        </section>
+        <section
+          class="carousel__card"
+          style="
+            background-image: url(https://s3-alpha-sig.figma.com/img/325e/9f5e/055006417e1f028ec69bdfc505f8fc3f?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=QttXEFL0LcvDrzLpiM2-vtRd5P67yy8uI-LmSoOXCeqACuWcssQxDpk3c0423mbR-CIXdlNA24LPN8dH8q8BmrulI~7-iTKWhTPVspMOGMwzVzDRrNzr5MINmgeq~Ui~5IV5~6T3L7iB8c99sej3WFEqgzIeaed2jMO0Mxt8JM0lI116LEfQaAEV~8~EFQWDjET7z47IYiGvbYCgMwHYXNhIGI2vmayjR1qYcrQnFD9vwaGvfSqrtCJTNnpn2WnmoI4yj2skh-Izuri2qtnHc-CkofX9~VdbYH98oThxdmnI5Loy2WuaKkhtMub9Ed2ltZeQe2r-M4P9S8apmpP9ng__);
+          "
+        >
+          <h2>Velkommen til Sønderborg</h2>
+        </section>
+        <section
+          class="carousel__card"
+          style="
+            background-image: url(https://s3-alpha-sig.figma.com/img/6c2b/1fe7/589ec25036f475ffec06a96e800e5884?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cbPywznUjz-4anQbr0S1uLbRNDxlxTssEVyF0gglbcjygT5lA~B9Qgu9T4T8NanL1sdpgiAnvGh6al~85El8cOc2ewIg8m2CUMcl9pdNtMfo2XRM8gxe2WVJMw35nQlC~Hs2zJwCNp0eDt9nZVHbBJzjZyllmwDWS4KrD1GTtD0a7HpSM3kUx1o8btJ2mnlTY8D33KKmwyb4P3gW4TnMOfDvoNAvPv2vITAa9SiI~t1HldiEhWJwbPo1kCnsAXs8A4DxlpbXuAZs9gaqgqMuV7-fXZLxVfhvYGQKLnpGqLI4l6s~UE1bU32W-DOdEG7r9PnpoJdIyN8hYUEqnTCJAA__);
+          "
+        >
+          <h2>Velkommen til Sønderborg</h2>
+        </section>
+        <section
+          class="carousel__card"
+          style="
+            background-image: url(https://s3-alpha-sig.figma.com/img/94be/e420/573d411c71c0379b348dea1962594755?Expires=1722816000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=BpjpKCXSuZLazvfZNrvGYhdM9kA7mW1O08OqcaaaqZamcbptnB0TACz1j5EvfoBztYAolF7Bg~DddWJ3WWOTN1jgq7u7WF-6hTE9tvoOt4m8Fhd~rPMg8Ml7CEoSlmUQmWgOB1~YZyVPDbr0~JsAYGLL7NmOnD47QXeD4fDvGxjSN-cAUFTbee2J0gmMdzuR1zV8xDa1qoUwD2zpabCtA2vFmZ-ICv23WEMVT8hnZRkDzjSW-BJqlOOSIJmcWd-4tK10n71gWmvh5SAU27JqFm0VAFe7YiktiJUwh5rqJjzab34nPNrTWJCHJXcpZ56elp7HAdtAyhmu4v0S5E7-3Q__);
+          "
+        >
+          <h2>Velkommen til Sønderborg</h2>
+        </section>
+      </section>
+    </section>
+    <section class="welcome">
+      <h1 class="welcome__title">Give familien ferie mere spændende inhold</h1>
+      <span class="welcome__subtitle">
+        Som gæst i Sønderborg Kommune kan du planlægge en meget alsidig ferie,
+        Holder familieferie med masser af sjov attraktioner og aktiviteter i
+        området
+      </span>
+    </section>
+    <section class="hero">
+      <section class="hero__details">
+        <h2>Planlægge din dag</h2>
+        <p>
+          Her kan du finde de mest populæret aktiviteter i sønderborg området
+          til oplever de bedste ferie med din familie. vi vil inspirere dig til
+          at se den abslolut besdste ferie med din familie
+        </p>
+        <section class="primaryBtn">
+          <span>udforske nu</span>
+          <img class="arrow" src="images/oui_arrow-up.svg" alt="">
+        </section>
+      </section>
+      <section class="hero__image">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/d47e/6654/b62a70566df22be999a1ec120b7a76c3?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dnE1682ha-JhqU6tZTb98b42b7kCQBPEia80Y8YRX7cVB8DA8mVo10Gv3K2JL00rkhNnwUyEdQPFaqVp9UsR3PygNpomyR1KG0u4fvT4Pni1U~vKFRrmaM7bRbSmP0cb9KKXPyOCqbbWGLfXOGmpMABnuiLbRx8CqBU4gxppByEHgXmYW8GurGSJouee9vEG6LbpEHxffsw6JP5840zi~QrSrfss5lBI98lUqgzR7PhqomCzcnhbI7MOd8H-fry7dCO8CCS5RL-rWBt7m-10lV~z3c2aKThr9PvuQDT4TLl58xejYj9DjIthZGgrTXuno8t5IZp0BpW2iVWdIft-eQ__"
+          alt=""
+        >
+      </section>
+      <section class="hero__image">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/91ca/1ce4/32b2a5e1f94f3de2188bd3d62c6b645f?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=k4Moa-lh5XOS4rpwmSRpndDnyE9XQgUQim3MJLk86so-kBZ8QVyO-hYQRJ9xQGsLjMBaP~Zkib2xUqPyvPlOO6PG5BtAlxdRkf86eB6b3wFcuRI9QHnvndiJQcmGqs0H19qJcn0xt9E9oWhpLKaoLhGw~iM7fzPLajhBG-ZVToOaRUOSouTFotOeHyVDxwjWtAsiOLF133Yf3TmYISsMX~tTWBHAbbzjSUzWqNZ1RrK5Ypl9MNy5x1Wd06R1hCd~qEtsBjkU5M82p26TL8zseG1pORkUzabVILOudMwORzN3Vq51oNstDGjl9lHOWZWipVxNDLborE9tMjEFzAeXKQ__"
+          alt=""
+        >
+      </section>
+      <section class="hero__image">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/9546/c8e6/9a23a3544f53af4d9ee15c5d9254e872?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=oqfT86U8gPhatOXVA92W756QYHM9MJQBTWQPh8WRnb8mUT9ZIDdjQ7a68krNJbq5E-59AEqUN~sjTr1HTQaZtZyulH-G~X6di6HH2VVngmExWAZhSWpyyp2F6kJr1nJbCPzyZi-SlheC~2O9uNBdNKZYxYKNhrTJT~XMFVD54mt8~b2Qx2DTgW7wWvLi36~KJSPjmOYzhM2QHqCBjHaCaC8XL3HhIW0OvfU9OYEsx4XLpJsCVURFhIJf87RoR0n-8lLDCO69mKdxY5~ZCJJUPBxdSXzOVC20pFl~jjCyWpqa-uyBc1jqMuc17egwQClLOYh9oR3-xEfekBCZcxbdOA__"
+          alt=""
+        >
+      </section>
+    </section>
+    <h2>Det sket</h2>
+    <section class="events">
+      <article class="events__eventWrapper">
+        <section
+          class="events__item"
+          style="
+            background: url(images/image512.png);
+            background-repeat: no-repeat;
+          "
+        >
+          <span class="events__eventItemStartDate">1<br >Jul</span>
+        </section>
+        <section class="events__eventInfo">
+          <section class="eventInfo__item">
+            <span class="eventInfo__itemName">Børnfest</span>
+          </section>
+          <section class="eventInfo__item">
+            <section class="eventInfo__itemEndDate">
+              <span> 20/07 </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+              >
+                <path
+                  d="M19.496 4H17.496V3C17.496 2.73478 17.3906 2.48043 17.2031 2.29289C17.0155 2.10536 16.7612 2 16.496 2C16.2308 2 15.9764 2.10536 15.7889 2.29289C15.6013 2.48043 15.496 2.73478 15.496 3V4H9.49597V3C9.49597 2.73478 9.39061 2.48043 9.20308 2.29289C9.01554 2.10536 8.76119 2 8.49597 2C8.23076 2 7.9764 2.10536 7.78887 2.29289C7.60133 2.48043 7.49597 2.73478 7.49597 3V4H5.49597C4.70032 4 3.93726 4.31607 3.37465 4.87868C2.81204 5.44129 2.49597 6.20435 2.49597 7V19C2.49597 19.7957 2.81204 20.5587 3.37465 21.1213C3.93726 21.6839 4.70032 22 5.49597 22H19.496C20.2916 22 21.0547 21.6839 21.6173 21.1213C22.1799 20.5587 22.496 19.7957 22.496 19V7C22.496 6.20435 22.1799 5.44129 21.6173 4.87868C21.0547 4.31607 20.2916 4 19.496 4ZM20.496 19C20.496 19.2652 20.3906 19.5196 20.2031 19.7071C20.0155 19.8946 19.7612 20 19.496 20H5.49597C5.23076 20 4.9764 19.8946 4.78887 19.7071C4.60133 19.5196 4.49597 19.2652 4.49597 19V12H20.496V19ZM20.496 10H4.49597V7C4.49597 6.73478 4.60133 6.48043 4.78887 6.29289C4.9764 6.10536 5.23076 6 5.49597 6H7.49597V7C7.49597 7.26522 7.60133 7.51957 7.78887 7.70711C7.9764 7.89464 8.23076 8 8.49597 8C8.76119 8 9.01554 7.89464 9.20308 7.70711C9.39061 7.51957 9.49597 7.26522 9.49597 7V6H15.496V7C15.496 7.26522 15.6013 7.51957 15.7889 7.70711C15.9764 7.89464 16.2308 8 16.496 8C16.7612 8 17.0155 7.89464 17.2031 7.70711C17.3906 7.51957 17.496 7.26522 17.496 7V6H19.496C19.7612 6 20.0155 6.10536 20.2031 6.29289C20.3906 6.48043 20.496 6.73478 20.496 7V10Z"
+                  fill="white"
+                />
+              </svg>
+            </section>
+          </section>
+          <section class="eventInfo__item">
+            <section class="eventInfo__itemLocation">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="18"
+                viewBox="0 0 13 18"
+                fill="none"
+              >
+                <path
+                  d="M6.49597 8.55C5.92765 8.55 5.38261 8.31295 4.98074 7.89099C4.57888 7.46903 4.35311 6.89674 4.35311 6.3C4.35311 5.70326 4.57888 5.13097 4.98074 4.70901C5.38261 4.28705 5.92765 4.05 6.49597 4.05C7.06429 4.05 7.60934 4.28705 8.0112 4.70901C8.41306 5.13097 8.63883 5.70326 8.63883 6.3C8.63883 6.59547 8.5834 6.88806 8.47571 7.16104C8.36803 7.43402 8.21018 7.68206 8.0112 7.89099C7.81222 8.09992 7.57599 8.26566 7.31601 8.37873C7.05602 8.4918 6.77738 8.55 6.49597 8.55ZM6.49597 0C4.90467 0 3.37855 0.663748 2.25333 1.84523C1.12811 3.02671 0.495972 4.62914 0.495972 6.3C0.495972 11.025 6.49597 18 6.49597 18C6.49597 18 12.496 11.025 12.496 6.3C12.496 4.62914 11.8638 3.02671 10.7386 1.84523C9.61339 0.663748 8.08727 0 6.49597 0Z"
+                  fill="white"
+                />
+              </svg>
+              <span> Sønderborg </span>
+            </section>
+          </section>
+          <section class="eventInfo__item">
+            <a class="secondaryLink" href="#">Book nu</a>
+          </section>
+        </section>
+      </article>
+      <article class="events__eventWrapper">
+        <section
+          class="events__item"
+          style="
+            background: url(images/image512.png);
+            background-repeat: no-repeat;
+          "
+        >
+          <span class="events__eventItemStartDate">1<br >Jul</span>
+        </section>
+        <section class="events__eventInfo">
+          <section class="eventInfo__item">
+            <span class="eventInfo__itemName">Børnfest</span>
+          </section>
+          <section class="eventInfo__item">
+            <section class="eventInfo__itemEndDate">
+              <span> 20/07 </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+              >
+                <path
+                  d="M19.496 4H17.496V3C17.496 2.73478 17.3906 2.48043 17.2031 2.29289C17.0155 2.10536 16.7612 2 16.496 2C16.2308 2 15.9764 2.10536 15.7889 2.29289C15.6013 2.48043 15.496 2.73478 15.496 3V4H9.49597V3C9.49597 2.73478 9.39061 2.48043 9.20308 2.29289C9.01554 2.10536 8.76119 2 8.49597 2C8.23076 2 7.9764 2.10536 7.78887 2.29289C7.60133 2.48043 7.49597 2.73478 7.49597 3V4H5.49597C4.70032 4 3.93726 4.31607 3.37465 4.87868C2.81204 5.44129 2.49597 6.20435 2.49597 7V19C2.49597 19.7957 2.81204 20.5587 3.37465 21.1213C3.93726 21.6839 4.70032 22 5.49597 22H19.496C20.2916 22 21.0547 21.6839 21.6173 21.1213C22.1799 20.5587 22.496 19.7957 22.496 19V7C22.496 6.20435 22.1799 5.44129 21.6173 4.87868C21.0547 4.31607 20.2916 4 19.496 4ZM20.496 19C20.496 19.2652 20.3906 19.5196 20.2031 19.7071C20.0155 19.8946 19.7612 20 19.496 20H5.49597C5.23076 20 4.9764 19.8946 4.78887 19.7071C4.60133 19.5196 4.49597 19.2652 4.49597 19V12H20.496V19ZM20.496 10H4.49597V7C4.49597 6.73478 4.60133 6.48043 4.78887 6.29289C4.9764 6.10536 5.23076 6 5.49597 6H7.49597V7C7.49597 7.26522 7.60133 7.51957 7.78887 7.70711C7.9764 7.89464 8.23076 8 8.49597 8C8.76119 8 9.01554 7.89464 9.20308 7.70711C9.39061 7.51957 9.49597 7.26522 9.49597 7V6H15.496V7C15.496 7.26522 15.6013 7.51957 15.7889 7.70711C15.9764 7.89464 16.2308 8 16.496 8C16.7612 8 17.0155 7.89464 17.2031 7.70711C17.3906 7.51957 17.496 7.26522 17.496 7V6H19.496C19.7612 6 20.0155 6.10536 20.2031 6.29289C20.3906 6.48043 20.496 6.73478 20.496 7V10Z"
+                  fill="white"
+                />
+              </svg>
+            </section>
+          </section>
+          <section class="eventInfo__item">
+            <section class="eventInfo__itemLocation">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="18"
+                viewBox="0 0 13 18"
+                fill="none"
+              >
+                <path
+                  d="M6.49597 8.55C5.92765 8.55 5.38261 8.31295 4.98074 7.89099C4.57888 7.46903 4.35311 6.89674 4.35311 6.3C4.35311 5.70326 4.57888 5.13097 4.98074 4.70901C5.38261 4.28705 5.92765 4.05 6.49597 4.05C7.06429 4.05 7.60934 4.28705 8.0112 4.70901C8.41306 5.13097 8.63883 5.70326 8.63883 6.3C8.63883 6.59547 8.5834 6.88806 8.47571 7.16104C8.36803 7.43402 8.21018 7.68206 8.0112 7.89099C7.81222 8.09992 7.57599 8.26566 7.31601 8.37873C7.05602 8.4918 6.77738 8.55 6.49597 8.55ZM6.49597 0C4.90467 0 3.37855 0.663748 2.25333 1.84523C1.12811 3.02671 0.495972 4.62914 0.495972 6.3C0.495972 11.025 6.49597 18 6.49597 18C6.49597 18 12.496 11.025 12.496 6.3C12.496 4.62914 11.8638 3.02671 10.7386 1.84523C9.61339 0.663748 8.08727 0 6.49597 0Z"
+                  fill="white"
+                />
+              </svg>
+              <span> Sønderborg </span>
+            </section>
+          </section>
+          <section class="eventInfo__item">
+            <a class="secondaryLink" href="#">Book nu</a>
+          </section>
+        </section>
+      </article>
+      <article class="events__eventWrapper">
+        <section
+          class="events__item"
+          style="
+            background: url(images/image512.png);
+            background-repeat: no-repeat;
+          "
+        >
+          <span class="events__eventItemStartDate">1<br >Jul</span>
+        </section>
+        <section class="events__eventInfo">
+          <section class="eventInfo__item">
+            <span class="eventInfo__itemName">Børnfest</span>
+          </section>
+          <section class="eventInfo__item">
+            <section class="eventInfo__itemEndDate">
+              <span> 20/07 </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+              >
+                <path
+                  d="M19.496 4H17.496V3C17.496 2.73478 17.3906 2.48043 17.2031 2.29289C17.0155 2.10536 16.7612 2 16.496 2C16.2308 2 15.9764 2.10536 15.7889 2.29289C15.6013 2.48043 15.496 2.73478 15.496 3V4H9.49597V3C9.49597 2.73478 9.39061 2.48043 9.20308 2.29289C9.01554 2.10536 8.76119 2 8.49597 2C8.23076 2 7.9764 2.10536 7.78887 2.29289C7.60133 2.48043 7.49597 2.73478 7.49597 3V4H5.49597C4.70032 4 3.93726 4.31607 3.37465 4.87868C2.81204 5.44129 2.49597 6.20435 2.49597 7V19C2.49597 19.7957 2.81204 20.5587 3.37465 21.1213C3.93726 21.6839 4.70032 22 5.49597 22H19.496C20.2916 22 21.0547 21.6839 21.6173 21.1213C22.1799 20.5587 22.496 19.7957 22.496 19V7C22.496 6.20435 22.1799 5.44129 21.6173 4.87868C21.0547 4.31607 20.2916 4 19.496 4ZM20.496 19C20.496 19.2652 20.3906 19.5196 20.2031 19.7071C20.0155 19.8946 19.7612 20 19.496 20H5.49597C5.23076 20 4.9764 19.8946 4.78887 19.7071C4.60133 19.5196 4.49597 19.2652 4.49597 19V12H20.496V19ZM20.496 10H4.49597V7C4.49597 6.73478 4.60133 6.48043 4.78887 6.29289C4.9764 6.10536 5.23076 6 5.49597 6H7.49597V7C7.49597 7.26522 7.60133 7.51957 7.78887 7.70711C7.9764 7.89464 8.23076 8 8.49597 8C8.76119 8 9.01554 7.89464 9.20308 7.70711C9.39061 7.51957 9.49597 7.26522 9.49597 7V6H15.496V7C15.496 7.26522 15.6013 7.51957 15.7889 7.70711C15.9764 7.89464 16.2308 8 16.496 8C16.7612 8 17.0155 7.89464 17.2031 7.70711C17.3906 7.51957 17.496 7.26522 17.496 7V6H19.496C19.7612 6 20.0155 6.10536 20.2031 6.29289C20.3906 6.48043 20.496 6.73478 20.496 7V10Z"
+                  fill="white"
+                />
+              </svg>
+            </section>
+          </section>
+          <section class="eventInfo__item">
+            <section class="eventInfo__itemLocation">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="18"
+                viewBox="0 0 13 18"
+                fill="none"
+              >
+                <path
+                  d="M6.49597 8.55C5.92765 8.55 5.38261 8.31295 4.98074 7.89099C4.57888 7.46903 4.35311 6.89674 4.35311 6.3C4.35311 5.70326 4.57888 5.13097 4.98074 4.70901C5.38261 4.28705 5.92765 4.05 6.49597 4.05C7.06429 4.05 7.60934 4.28705 8.0112 4.70901C8.41306 5.13097 8.63883 5.70326 8.63883 6.3C8.63883 6.59547 8.5834 6.88806 8.47571 7.16104C8.36803 7.43402 8.21018 7.68206 8.0112 7.89099C7.81222 8.09992 7.57599 8.26566 7.31601 8.37873C7.05602 8.4918 6.77738 8.55 6.49597 8.55ZM6.49597 0C4.90467 0 3.37855 0.663748 2.25333 1.84523C1.12811 3.02671 0.495972 4.62914 0.495972 6.3C0.495972 11.025 6.49597 18 6.49597 18C6.49597 18 12.496 11.025 12.496 6.3C12.496 4.62914 11.8638 3.02671 10.7386 1.84523C9.61339 0.663748 8.08727 0 6.49597 0Z"
+                  fill="white"
+                />
+              </svg>
+              <span> Sønderborg </span>
+            </section>
+          </section>
+          <section class="eventInfo__item">
+            <a class="secondaryLink" href="#">Book nu</a>
+          </section>
+        </section>
+      </article>
+      <article class="events__eventWrapper">
+        <section
+          class="events__item"
+          style="
+            background: url(images/image512.png);
+            background-repeat: no-repeat;
+          "
+        >
+          <span class="events__eventItemStartDate">1<br >Jul</span>
+        </section>
+        <section class="events__eventInfo">
+          <section class="eventInfo__item">
+            <span class="eventInfo__itemName">Børnfest</span>
+          </section>
+          <section class="eventInfo__item">
+            <section class="eventInfo__itemEndDate">
+              <span> 20/07 </span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+              >
+                <path
+                  d="M19.496 4H17.496V3C17.496 2.73478 17.3906 2.48043 17.2031 2.29289C17.0155 2.10536 16.7612 2 16.496 2C16.2308 2 15.9764 2.10536 15.7889 2.29289C15.6013 2.48043 15.496 2.73478 15.496 3V4H9.49597V3C9.49597 2.73478 9.39061 2.48043 9.20308 2.29289C9.01554 2.10536 8.76119 2 8.49597 2C8.23076 2 7.9764 2.10536 7.78887 2.29289C7.60133 2.48043 7.49597 2.73478 7.49597 3V4H5.49597C4.70032 4 3.93726 4.31607 3.37465 4.87868C2.81204 5.44129 2.49597 6.20435 2.49597 7V19C2.49597 19.7957 2.81204 20.5587 3.37465 21.1213C3.93726 21.6839 4.70032 22 5.49597 22H19.496C20.2916 22 21.0547 21.6839 21.6173 21.1213C22.1799 20.5587 22.496 19.7957 22.496 19V7C22.496 6.20435 22.1799 5.44129 21.6173 4.87868C21.0547 4.31607 20.2916 4 19.496 4ZM20.496 19C20.496 19.2652 20.3906 19.5196 20.2031 19.7071C20.0155 19.8946 19.7612 20 19.496 20H5.49597C5.23076 20 4.9764 19.8946 4.78887 19.7071C4.60133 19.5196 4.49597 19.2652 4.49597 19V12H20.496V19ZM20.496 10H4.49597V7C4.49597 6.73478 4.60133 6.48043 4.78887 6.29289C4.9764 6.10536 5.23076 6 5.49597 6H7.49597V7C7.49597 7.26522 7.60133 7.51957 7.78887 7.70711C7.9764 7.89464 8.23076 8 8.49597 8C8.76119 8 9.01554 7.89464 9.20308 7.70711C9.39061 7.51957 9.49597 7.26522 9.49597 7V6H15.496V7C15.496 7.26522 15.6013 7.51957 15.7889 7.70711C15.9764 7.89464 16.2308 8 16.496 8C16.7612 8 17.0155 7.89464 17.2031 7.70711C17.3906 7.51957 17.496 7.26522 17.496 7V6H19.496C19.7612 6 20.0155 6.10536 20.2031 6.29289C20.3906 6.48043 20.496 6.73478 20.496 7V10Z"
+                  fill="white"
+                />
+              </svg>
+            </section>
+          </section>
+          <section class="eventInfo__item">
+            <section class="eventInfo__itemLocation">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="13"
+                height="18"
+                viewBox="0 0 13 18"
+                fill="none"
+              >
+                <path
+                  d="M6.49597 8.55C5.92765 8.55 5.38261 8.31295 4.98074 7.89099C4.57888 7.46903 4.35311 6.89674 4.35311 6.3C4.35311 5.70326 4.57888 5.13097 4.98074 4.70901C5.38261 4.28705 5.92765 4.05 6.49597 4.05C7.06429 4.05 7.60934 4.28705 8.0112 4.70901C8.41306 5.13097 8.63883 5.70326 8.63883 6.3C8.63883 6.59547 8.5834 6.88806 8.47571 7.16104C8.36803 7.43402 8.21018 7.68206 8.0112 7.89099C7.81222 8.09992 7.57599 8.26566 7.31601 8.37873C7.05602 8.4918 6.77738 8.55 6.49597 8.55ZM6.49597 0C4.90467 0 3.37855 0.663748 2.25333 1.84523C1.12811 3.02671 0.495972 4.62914 0.495972 6.3C0.495972 11.025 6.49597 18 6.49597 18C6.49597 18 12.496 11.025 12.496 6.3C12.496 4.62914 11.8638 3.02671 10.7386 1.84523C9.61339 0.663748 8.08727 0 6.49597 0Z"
+                  fill="white"
+                />
+              </svg>
+              <span> Sønderborg </span>
+            </section>
+          </section>
+          <section class="eventInfo__item">
+            <a class="secondaryLink" href="#">Book nu</a>
+          </section>
+        </section>
+      </section>
+    </section>
+    <section class="playground">
+      <section class="playground__details">
+        <h3 class="playground__title">Legepladser</h3>
+        <span class="playground__subtitle"
+          >Benytter din børn til sjovet legepladse i sønderborg?</span
+        >
+        <span class="playground__desc"
+          >De kommunale legepladser kan du benytte ganske gratis.</span
+        >
+        <section class="playground__showOnMap">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="18"
+            viewBox="0 0 13 18"
+            fill="none"
+          >
+            <path
+              d="M6.49597 8.55C5.92765 8.55 5.38261 8.31295 4.98074 7.89099C4.57888 7.46903 4.35311 6.89674 4.35311 6.3C4.35311 5.70326 4.57888 5.13097 4.98074 4.70901C5.38261 4.28705 5.92765 4.05 6.49597 4.05C7.06429 4.05 7.60934 4.28705 8.0112 4.70901C8.41306 5.13097 8.63883 5.70326 8.63883 6.3C8.63883 6.59547 8.5834 6.88806 8.47571 7.16104C8.36803 7.43402 8.21018 7.68206 8.0112 7.89099C7.81222 8.09992 7.57599 8.26566 7.31601 8.37873C7.05602 8.4918 6.77738 8.55 6.49597 8.55ZM6.49597 0C4.90467 0 3.37855 0.663748 2.25333 1.84523C1.12811 3.02671 0.495972 4.62914 0.495972 6.3C0.495972 11.025 6.49597 18 6.49597 18C6.49597 18 12.496 11.025 12.496 6.3C12.496 4.62914 11.8638 3.02671 10.7386 1.84523C9.61339 0.663748 8.08727 0 6.49597 0Z"
+              fill="white"
+            />
+          </svg>
+          <a class="secondaryLink" href="#">Vis på kort</a>
+        </section>
+      </section>
+      <section class="playground__pics">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/6c2b/1fe7/589ec25036f475ffec06a96e800e5884?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=l9pFZE~AwB4bYv~3vkEqgr~uJ2ZTayd3MluC8lzeESotEyl5NSFUEfmKEJXGx0UQqhK7Os7DfhT6avPbBjipqPQJVXk6AEGm3Sdv32U0u18HGzYpzOkZ6KLPvzxlEmy0k5l5LgRW-j5lqoi1YCVqAb~wyAOV1r6-fUT2g-NtP6teybx7tgg-2jJLk8o42fYU~1we4E3u14yyvPTAE4P4PhMJRmDYHwULK2TmtuYQX8khW-D5yb8UJcbmzDOG1J0ArHa0pcxMWpKJsVscIQk~W50OU3bkQSQIgETEphBpNq3rKfL7R2COcTNE7EeI7wYf5KskTrgEHeC2J7wKP0wV7Q__"
+          alt=""
+        >
+        <img
+          src="https://s3-alpha-sig.figma.com/img/c5d5/20f1/5babc1372fa806853b5a9a74069e0b0f?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VC~8ZqbAiXkIVby6DJqXcxg1Y191JU3qyZparZEJt1aH87qcRTqYApGq~vBnfny6DKUAYcO073BZud8vvKqntu~ASMJe1rgtMAlAfqBjTJV0YCKORZgLcP1-L-j3CiS1jduZE~c5ZsRoDPOQbrXC2CP6BahTxfwuacy0cFLMnzskQEBzmbGyGmdlfUE6zdSFsQxKQAlDoHBEY~NMKueQxXbVRTjOKt-vQvSPzHjZctUoMeyvGQhfCLSvAhSovfPHtI5dpavnBGm7BYjiFF09bvX1xqsMM3rGgII37y9baLNOQjcqKYmz-Md1RLTJ0~SSzGxQBc7o6PhzFcML75Lldg__"
+          alt=""
+        >
+        <img
+          src="https://s3-alpha-sig.figma.com/img/325e/9f5e/055006417e1f028ec69bdfc505f8fc3f?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jdXxu9q6TMejo5FneriMq9ZJIq5j8rXIlzVNBSE3hijGVd07I-vUWhebyDrzuZ0rTWgcEXAJiP6xkHxnUBgfnFUNtnbK0YsXnnqO2gLYnpiyDvQv2-H0y9Qf1RJ4fxJZm6~6XghZTwy25EWnxCmrLQimkFCYH9f7Gir8smirb0hJKkuVOTC4qVi1n~-TgSzFsF848FbpC11~2C8yC6IG1QcRO6KXQHI45gOLsUbuBpnMw4K~E5IpuHsRiW~mEiFnIa-V3WJVJCwrotuUJ6yXHx5J6~VHj0wBwjEguboDOjC5-BfVhNoxbegz-hz0yJDf3WPE7~8Qte9gZVHoz5JKtQ__"
+          alt=""
+        >
+        <img
+          src="https://s3-alpha-sig.figma.com/img/1539/3cbc/f60fdf99d6cef24098cfacc2fd324c2a?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PrVb-HsxhHV3118pBvO21jUOzMOY-cMhRxXAgJ3s65g~CAxsinXrawa4Kt2gZzBysp0hRX7vqQU0Fz9~eeoqyMcEvhJ2-~FFhgFb-LRLVi6Of9cj4-s~BCCbZPBA~fShS0vhywjuYftFUJ8wBpaQEcdkNVuXkp-mLTcAzEWUwxCSlE9xdS8XoEYjc--UHGor42eCo58UaVE8vrhOmEXcUei88xhPNRP65neJKBenXHADQrZmAxVrwDYfnUVTzh-3w-jyyewT3dFq2YYZCYfrXssA~Mb8s50oDlqx6PYe6beEOzI5LEX4e-99EOdMACo1WlljDAO-lytzbVhYego96A__"
+          alt=""
+        >
+      </section>
+    </section>
+    <h2 class="title">Sønderborg 5 Top Attraktioner i en billet</h2>
+    <section class="attractions">
+      <article class="attractions__product">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/6676/64da/22c3ea58ddf4b415065466e9bc6d70d5?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=G1350EX7AVtJVV3aUdw0ouh1WSlg4gFvG76lvHWZIKDBqtNK71ELvd3c5xpIncjcd0vRv8hNRAQxDMU7xSKP7c7lZK6MEgdAKkPhSiwOtAL2G2FJH03j5Ny7REDfLbnB1-D83L1aVYzu~LgCsqStDb7z0Tn8M1cVMipphC-rxQciUSW~wf4bJhOdOGfgzcRKfhN6W20GpEkpHJrC~LcVWwk0CrLLTQuLAXakD1PEbcySnC0GRSVGn~EGoF~oNleMMYLGej93QCLq7vWVOrrIB1w2zhv0BIPpyj5gMjOArwUjvrjAJVEhvS2pZkBboz2mVVtb2gabt7ZdrCJ68ppNNQ__"
+          alt=""
+        >
+        <span class="attraction__name">Børn Universe Science Park</span>
+        <span class="attraction__details"
+          >Oplev spænding og sjove med hele familien i sønderjyllands største
+          oplevelsespark</span
+        >
+        <section class="attraction__links">
+          <a href="#" class="primaryLink">Læse mere</a>
+          <section class="attraction__showOnMap">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="18"
+              viewBox="0 0 14 18"
+              fill="none"
+            >
+              <path
+                d="M7.00293 8.57213C6.38725 8.57213 5.79678 8.34672 5.36143 7.9455C4.92608 7.54428 4.6815 7.0001 4.6815 6.43269C4.6815 5.86527 4.92608 5.3211 5.36143 4.91988C5.79678 4.51865 6.38725 4.29325 7.00293 4.29325C7.61861 4.29325 8.20907 4.51865 8.64443 4.91988C9.07978 5.3211 9.32436 5.86527 9.32436 6.43269C9.32436 6.71364 9.26431 6.99185 9.14765 7.25142C9.03099 7.51098 8.85999 7.74683 8.64443 7.9455C8.42886 8.14417 8.17295 8.30175 7.8913 8.40927C7.60965 8.51679 7.30778 8.57213 7.00293 8.57213ZM7.00293 0.442261C5.27902 0.442261 3.62572 1.07339 2.40674 2.19682C1.18775 3.32024 0.50293 4.84393 0.50293 6.43269C0.50293 10.9255 7.00293 17.5578 7.00293 17.5578C7.00293 17.5578 13.5029 10.9255 13.5029 6.43269C13.5029 4.84393 12.8181 3.32024 11.5991 2.19682C10.3801 1.07339 8.72684 0.442261 7.00293 0.442261Z"
+                fill="#574837"
+              />
+            </svg>
+            <a href="#" class="primaryLink">Vis på kort</a>
+          </section>
+        </section>
+      </article>
+      <article class="attractions__product">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/94be/e420/573d411c71c0379b348dea1962594755?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=PEghmeQHbw-eCdoYWCkaeUv3e0uUpX9HcqFANq2x6wf3OU8b-uVh4b0IcKf74wg7Ee5bOoJXLHvy36C5Nk0roy0v-rbfOj7Lo9gJcy-KNb3ITtMNGuLpg6sbhg~SA40mIqOYGyRzWw3YSYVuyCQIzmikzim2TxxXP7~e2S1Raco2tP2~-0sI8o-9tsTdCrJSDiFCM3woj730b4C7SD4PoeIZgQn-8gGLNjaH4aFA6DkPWPyuAFKaA2NtEPc4kvgd1N-TP6qIIHQZpnT0WlLIaG3UOF~DtMBeTQAGODZJ45c1eJaBTYOs6OcZY0chXwxy2DRMQAI0DVIAon4M5bMGDQ__"
+          alt=""
+        >
+        <span class="attraction__name">Børn Universe Science Park</span>
+        <span class="attraction__details"
+          >Oplev spænding og sjove med hele familien i sønderjyllands største
+          oplevelsespark</span
+        >
+        <section class="attraction__links">
+          <a href="#" class="primaryLink">Læse mere</a>
+          <section class="attraction__showOnMap">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="18"
+              viewBox="0 0 14 18"
+              fill="none"
+            >
+              <path
+                d="M7.00293 8.57213C6.38725 8.57213 5.79678 8.34672 5.36143 7.9455C4.92608 7.54428 4.6815 7.0001 4.6815 6.43269C4.6815 5.86527 4.92608 5.3211 5.36143 4.91988C5.79678 4.51865 6.38725 4.29325 7.00293 4.29325C7.61861 4.29325 8.20907 4.51865 8.64443 4.91988C9.07978 5.3211 9.32436 5.86527 9.32436 6.43269C9.32436 6.71364 9.26431 6.99185 9.14765 7.25142C9.03099 7.51098 8.85999 7.74683 8.64443 7.9455C8.42886 8.14417 8.17295 8.30175 7.8913 8.40927C7.60965 8.51679 7.30778 8.57213 7.00293 8.57213ZM7.00293 0.442261C5.27902 0.442261 3.62572 1.07339 2.40674 2.19682C1.18775 3.32024 0.50293 4.84393 0.50293 6.43269C0.50293 10.9255 7.00293 17.5578 7.00293 17.5578C7.00293 17.5578 13.5029 10.9255 13.5029 6.43269C13.5029 4.84393 12.8181 3.32024 11.5991 2.19682C10.3801 1.07339 8.72684 0.442261 7.00293 0.442261Z"
+                fill="#574837"
+              />
+            </svg>
+            <a href="#" class="primaryLink">Vis på kort</a>
+          </section>
+        </section>
+      </article>
+      <article class="attractions__product">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/4fe6/b3bf/c688323e53e98dca0b9b58d81c38c4b1?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=dioiQfofqH9LDhNvWjTVWxI6ze~ASC3UBuOjZr9EeDkYrGM9RqMnhSQKNRyYCb75GLFgCEYQDWm12VEjuUD0YgcSH-pyIMhyIflYHAILufXnkZm4Rv~jewuaDLuE33OZb0aLpTmLcVo2u8rXVUX28XSKp-tAmSrgRwZrifTVKFCAvYIrJXJvQMd~TZ2eEj46H18b1x4HlHXtQZiB124E5uC-IxJQwWHgin2hz~x63Lv9DcCpA49WgboDTJzBSAxtLU9ECOWLo3O619wlHxE4sFFxytiPia6t37vzn3MXaWANzS~23dx0epXUCytyt8THHTz4b-s0~MUvjCDshIl4LQ__"
+          alt=""
+        >
+        <span class="attraction__name">Børn Universe Science Park</span>
+        <span class="attraction__details"
+          >Oplev spænding og sjove med hele familien i sønderjyllands største
+          oplevelsespark</span
+        >
+        <section class="attraction__links">
+          <a href="#" class="primaryLink">Læse mere</a>
+          <section class="attraction__showOnMap">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="18"
+              viewBox="0 0 14 18"
+              fill="none"
+            >
+              <path
+                d="M7.00293 8.57213C6.38725 8.57213 5.79678 8.34672 5.36143 7.9455C4.92608 7.54428 4.6815 7.0001 4.6815 6.43269C4.6815 5.86527 4.92608 5.3211 5.36143 4.91988C5.79678 4.51865 6.38725 4.29325 7.00293 4.29325C7.61861 4.29325 8.20907 4.51865 8.64443 4.91988C9.07978 5.3211 9.32436 5.86527 9.32436 6.43269C9.32436 6.71364 9.26431 6.99185 9.14765 7.25142C9.03099 7.51098 8.85999 7.74683 8.64443 7.9455C8.42886 8.14417 8.17295 8.30175 7.8913 8.40927C7.60965 8.51679 7.30778 8.57213 7.00293 8.57213ZM7.00293 0.442261C5.27902 0.442261 3.62572 1.07339 2.40674 2.19682C1.18775 3.32024 0.50293 4.84393 0.50293 6.43269C0.50293 10.9255 7.00293 17.5578 7.00293 17.5578C7.00293 17.5578 13.5029 10.9255 13.5029 6.43269C13.5029 4.84393 12.8181 3.32024 11.5991 2.19682C10.3801 1.07339 8.72684 0.442261 7.00293 0.442261Z"
+                fill="#574837"
+              />
+            </svg>
+            <a href="#" class="primaryLink">Vis på kort</a>
+          </section>
+        </section>
+      </article>
+      <article class="attractions__product">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/d6bc/912f/195c707af3edfcbbe6ec41c7bcd95d27?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=kN5qNhL6DiuxAQmt6w~ITJscvPvuJ8hTNlMWXJE8nUqcBZwoWdDijY9QVrrB1uG901VGtQZntLtHn2AcQo53SbndMBEFBvM0TE5cF4ii453bu7KOgPuRf2Kn10JMkYTqf2KBs7Co~K7Cw2M5RToJMwSHdZ1xyIx1LL4olIltT5FgEICj-DSN7kvXvx36xrLKFs40OAP01VhKOSEfR00Em555klozzHnt~OVHm3noydtLBfUnhgfOwhuQ56514XImvXvLPUfF1~0duAeLwZRZaJ8WGGCKw4PKx~icrTp6GLq2qJr9IjC11o7IQcLwlkbH~Vt3jTU6ZPmtPYsxQkukRQ__"
+          alt=""
+        >
+        <span class="attraction__name">Børn Universe Science Park</span>
+        <span class="attraction__details"
+          >Oplev spænding og sjove med hele familien i sønderjyllands største
+          oplevelsespark</span
+        >
+        <section class="attraction__links">
+          <a href="#" class="primaryLink">Læse mere</a>
+          <section class="attraction__showOnMap">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="18"
+              viewBox="0 0 14 18"
+              fill="none"
+            >
+              <path
+                d="M7.00293 8.57213C6.38725 8.57213 5.79678 8.34672 5.36143 7.9455C4.92608 7.54428 4.6815 7.0001 4.6815 6.43269C4.6815 5.86527 4.92608 5.3211 5.36143 4.91988C5.79678 4.51865 6.38725 4.29325 7.00293 4.29325C7.61861 4.29325 8.20907 4.51865 8.64443 4.91988C9.07978 5.3211 9.32436 5.86527 9.32436 6.43269C9.32436 6.71364 9.26431 6.99185 9.14765 7.25142C9.03099 7.51098 8.85999 7.74683 8.64443 7.9455C8.42886 8.14417 8.17295 8.30175 7.8913 8.40927C7.60965 8.51679 7.30778 8.57213 7.00293 8.57213ZM7.00293 0.442261C5.27902 0.442261 3.62572 1.07339 2.40674 2.19682C1.18775 3.32024 0.50293 4.84393 0.50293 6.43269C0.50293 10.9255 7.00293 17.5578 7.00293 17.5578C7.00293 17.5578 13.5029 10.9255 13.5029 6.43269C13.5029 4.84393 12.8181 3.32024 11.5991 2.19682C10.3801 1.07339 8.72684 0.442261 7.00293 0.442261Z"
+                fill="#574837"
+              />
+            </svg>
+            <a href="#" class="primaryLink">Vis på kort</a>
+          </section>
+        </section>
+      </article>
+      <article class="attractions__product">
+        <img
+          src="https://s3-alpha-sig.figma.com/img/5ff3/ee0f/598703640972def6141b5dff1a59f29a?Expires=1723420800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EgOQ3QHF89x26XPoE0AxKKcD8nfNkw81PNFOE-NVrKy-54YpUdtoBEn-2140JHbMnzBdr1aghcYfVsGwMfPcUkQaf3lE1o~dH5vMRGcHfL6LX2VD5yQY8Gh9gipP4GPkh-Kck8JmXQhESsACEScEHC0hNF9iDDdURExARpTvCGTFZYwS4Jz~vOcekhWFpIOgKfbrSyXJ7~N9oAHjfFoTVWIXtFBjJiAXYxAC1Wv4-bP7kAzGx8MstaragRorjo~OUFakgqpJYa-6Sc0UNH8wIi6b9tacMJFFwBy7GauLa-ZGUprFbJ96yBxBw2jJG3oSo2xIRdFVDGl9VtpLUidZZA__"
+          alt=""
+        >
+        <span class="attraction__name">Børn Universe Science Park</span>
+        <span class="attraction__details"
+          >Oplev spænding og sjove med hele familien i sønderjyllands største
+          oplevelsespark</span
+        >
+        <section class="attraction__links">
+          <a href="#" class="primaryLink">Læse mere</a>
+          <section class="attraction__showOnMap">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="14"
+              height="18"
+              viewBox="0 0 14 18"
+              fill="none"
+            >
+              <path
+                d="M7.00293 8.57213C6.38725 8.57213 5.79678 8.34672 5.36143 7.9455C4.92608 7.54428 4.6815 7.0001 4.6815 6.43269C4.6815 5.86527 4.92608 5.3211 5.36143 4.91988C5.79678 4.51865 6.38725 4.29325 7.00293 4.29325C7.61861 4.29325 8.20907 4.51865 8.64443 4.91988C9.07978 5.3211 9.32436 5.86527 9.32436 6.43269C9.32436 6.71364 9.26431 6.99185 9.14765 7.25142C9.03099 7.51098 8.85999 7.74683 8.64443 7.9455C8.42886 8.14417 8.17295 8.30175 7.8913 8.40927C7.60965 8.51679 7.30778 8.57213 7.00293 8.57213ZM7.00293 0.442261C5.27902 0.442261 3.62572 1.07339 2.40674 2.19682C1.18775 3.32024 0.50293 4.84393 0.50293 6.43269C0.50293 10.9255 7.00293 17.5578 7.00293 17.5578C7.00293 17.5578 13.5029 10.9255 13.5029 6.43269C13.5029 4.84393 12.8181 3.32024 11.5991 2.19682C10.3801 1.07339 8.72684 0.442261 7.00293 0.442261Z"
+                fill="#574837"
+              />
+            </svg>
+            <a href="#" class="primaryLink">Vis på kort</a>
+          </section>
+        </section>
+      </section>
+    </section>
+    <section class="ticketInfo">
+      <span
+        >Billetten giver adgang til 1 besøg i hver af de 5 attraktioner i år, i
+        perioden fra 23. marts til 20 . oktober Du bestemmer selv hvornår og i
+        hvilken rækkefølge, du ønsker at besøge attraktionerne</span
+      >
+      <section class="primaryBtn">Køb billet nu</section>
+    </section>
+    <footer>
+      <section class="footer__nav">
+        <span class="footer__navTitle">Information</span>
+        <a>Podcast</a>
+        <a>Nyhedsbrev</a>
+        <a>Presse</a>
+      </section>
+      <section class="footer__nav">
+        <span class="footer__navTitle">Destination Sønderjylland</span>
+        <a>Kontakt</a>
+        <a>Om os</a>
+        <a>Webtilgængelighed</a>
+      </section>
+      <section class="footer__some">
+        <span class="footer__someTitle">Følg os</span>
+        <img src="images/facebook.png" alt="Facebook" >
+        <img src="images/instagram.png" alt="Instagram">
+        <img src="images/youtube.png" alt="Youtube">
+      </section>
+    </footer>
+    <section class="copyright">
+      <span>VisitSønderjylland © 2024</span>
+      <span>Data Protection Notice</span>
+    </section>
+    <script src="scripts/script.js"></script>
+
+    <script>
+      const weatherEndpoint = "http://api.weatherapi.com/v1/current.json?key=287c8ea7caa041afa27193527241407&q=sonderborg&aqi=no";
+        fetchData(weatherEndpoint).then((result) => {
+          document.querySelector(".header__weatherDegree").innerText =
+            Math.round(result.current.temp_c) + "°";
+          document.getElementById("weather_icon").src =
+            "http://" + result.current.condition.icon;
+        });
+        
+      if (window.innerWidth > 480) {
+        const events = document.querySelectorAll(".events__eventWrapper");
+        events.forEach((event) => {
+          event.addEventListener("mouseover", () => showDetails(event));
+          event.addEventListener("mouseout", () => hideDetails(event));
+        });
+      }
+    </script>
+  </body>
 </html>
