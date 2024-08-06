@@ -67,7 +67,7 @@ const DOG_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
 function applyActivityData() {
   const activityContainer = document.querySelector(".activities__container");
   fetchData(
-    "https://raw.githubusercontent.com/GhadaAlali92/testtest/main/data.json"
+    "data.json"
   ).then((result) => {
     result.forEach((activity) => {
       activityContainer.innerHTML +=
