@@ -568,7 +568,7 @@
     <script src="scripts/script.js"></script>
 
     <script>
-      const weatherEndpoint = "http://api.weatherapi.com/v1/current.json?key=287c8ea7caa041afa27193527241407&q=sonderborg&aqi=no";
+      const weatherEndpoint = "https://api.weatherapi.com/v1/current.json?key=287c8ea7caa041afa27193527241407&q=sonderborg&aqi=no";
         fetchData(weatherEndpoint).then((result) => {
           document.querySelector(".header__weatherDegree").innerText =
             Math.round(result.current.temp_c) + "°";
