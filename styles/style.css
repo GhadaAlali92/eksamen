@@ -551,6 +551,7 @@ main {
   border-radius: var(--border-radius-16);
   align-items: center;
   font-size: var(--typeface-size-xs);
+  width: fit-content
 }
 
 .activity__location,
@@ -656,6 +657,10 @@ main {
   .hero,
   nav ul {
     flex-direction: column;
+  }
+
+  .activity__info {
+    width: auto;
   }
 
   .activities__filter {
