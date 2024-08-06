@@ -191,11 +191,11 @@ nav ul li a {
   color: var(--color-2);
   background-color: var(--button-colors-primary-surface--default);
   border-radius: var(--border-radius-12);
-  padding: var(--spacing-32) var(--spacing-48);
-  font-size: var(--typeface-size-xl);
+  padding: var(--spacing-16) var(--spacing-24);
+  font-size: var(--typeface-size-lg);
   text-transform: uppercase;
   font-weight: var(--title__home-weight);
-  width: 260px;
+  width: 200px;
 }
 
 .primaryBtn img {
