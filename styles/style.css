@@ -205,6 +205,7 @@ nav ul li a {
 
 .primaryBtn:hover {
   background-color: var(--button-colors-primary-surface--hover);
+  cursor: pointer;
 }
 
 .primaryBtn:active {
