@@ -460,7 +460,7 @@ main {
 .filterOption,
 .activities__filterHeading,
 .activity__name {
-  font-weight: 600;
+  font-weight: var(--typeface-weight-semibold);
 }
 
 .activities__container {
